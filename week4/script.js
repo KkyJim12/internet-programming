@@ -23,11 +23,36 @@ const changeContentBack = () => {
   document.getElementById("content").firstChild.nodeValue = "Paragraph";
 };
 
+const submitForm = () => {
+  document.getElementById("new-content").innerHTML =
+    document.getElementById("box").value;
+
+  document.getElementById("submit-button").remove();
+
+  document.getElementById("box").addEventListener("keyup", changeByType);
+};
+
+const changeByType = () => {
+  document.getElementById("new-content").innerHTML =
+    document.getElementById("box").value;
+};
+
 const loadFunction = () => {
-  document.getElementById("heading").addEventListener("mouseenter", changeHeadingNew);
-  document.getElementById("heading").addEventListener("mouseleave", changeHeadingBack);
-  document.getElementById("content").addEventListener("mouseenter", changeContentNew);
-  document.getElementById("content").addEventListener("mouseleave", changeContentBack);
+  document
+    .getElementById("heading")
+    .addEventListener("mouseenter", changeHeadingNew);
+  document
+    .getElementById("heading")
+    .addEventListener("mouseleave", changeHeadingBack);
+  document
+    .getElementById("content")
+    .addEventListener("mouseenter", changeContentNew);
+  document
+    .getElementById("content")
+    .addEventListener("mouseleave", changeContentBack);
+  document
+    .getElementById("submit-button")
+    .addEventListener("click", submitForm);
 };
 
 document.addEventListener("DOMContentLoaded", loadFunction);
