@@ -7,17 +7,27 @@ const print5 = () => {
 print5();
 print5();
 
-const changeHeading = () => {
+const changeHeadingNew = () => {
   document.getElementById("heading").firstChild.nodeValue = "New Heading";
 };
 
-const changeContent = () => {
+const changeHeadingBack = () => {
+  document.getElementById("heading").firstChild.nodeValue = "Heading";
+};
+
+const changeContentNew = () => {
   document.getElementById("content").firstChild.nodeValue = "New Paragraph !!";
 };
 
+const changeContentBack = () => {
+  document.getElementById("content").firstChild.nodeValue = "Paragraph";
+};
+
 const loadFunction = () => {
-  document.getElementById("heading").addEventListener("click", changeHeading);
-  document.getElementById("content").addEventListener("click", changeContent);
+  document.getElementById("heading").addEventListener("mouseenter", changeHeadingNew);
+  document.getElementById("heading").addEventListener("mouseleave", changeHeadingBack);
+  document.getElementById("content").addEventListener("mouseenter", changeContentNew);
+  document.getElementById("content").addEventListener("mouseleave", changeContentBack);
 };
 
 document.addEventListener("DOMContentLoaded", loadFunction);
